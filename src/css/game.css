@@ -1,0 +1,41 @@
+.game_main {
+  height: 100%;
+  background-color: #1e272e;
+}
+/* .game_main .game_head{
+
+} */
+/* .game_main .game_body{
+  
+} */
+.game_main .game_body .game_play{
+  flex: 1;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+} 
+.game_main .game_body .game_play .game_pitch {
+  height: 70vh;
+  width: 50vh;
+  border: 1px solid #fff;
+  overflow: hidden;
+  background-image: url(../images/bgone.PNG);
+  background-size: cover;
+  position: relative;
+}
+@keyframes move {
+  0% {
+    top:-100px;
+  }
+  100% {
+    top:600px;
+  }
+}
+.game_main .game_body .game_score{
+  flex: 2;
+  
+}
+
+
+
+
