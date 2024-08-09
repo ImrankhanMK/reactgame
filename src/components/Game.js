@@ -267,7 +267,7 @@ const Game = () => {
             <img
               className="barrier-img"
               src={barrierImg}
-              alt="image"
+              alt="barrier-image"
               height="80"
               width="70"
               style={{
@@ -316,7 +316,7 @@ const Game = () => {
             <h5>Resource</h5>
             <img
               src={levelConfigurations[level - 1].user}
-              alt="image"
+              alt="resource"
               height="80"
               width="80"
             />
@@ -347,7 +347,7 @@ const Game = () => {
             {level <= 9 ? (
               <img
                 src={levelConfigurations[level].user}
-                alt="image"
+                alt="next level"
                 height="80"
                 width="80"
               />
