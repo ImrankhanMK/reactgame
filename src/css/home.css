@@ -4,6 +4,7 @@
   height: 100%;
   box-sizing: border-box;
   padding: 50px;
+  display: block;
 }
 .home_main h1 {
   margin: 0;
@@ -38,6 +39,7 @@
   backdrop-filter: blur(25px);
   color: #fff;
   text-transform: uppercase;
+  text-align: center;
 }
 .home_main input::placeholder {
   text-align: center;
@@ -75,4 +77,21 @@
 }
 .home_main .start_btn:hover::before {
   left: 0;
+}
+.mobile-message{
+  display: none;
+  background-color: #00171f;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+@media (max-width: 425px) {
+  .home_main{
+    display:none !important;
+  }
+  .mobile-message{
+    display: flex ;
+  }
 }

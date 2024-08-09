@@ -1,41 +1,210 @@
-.game_main {
+.game-main {
   height: 100%;
   background-color: #1e272e;
-}
-/* .game_main .game_head{
-
-} */
-/* .game_main .game_body{
-  
-} */
-.game_main .game_body .game_play{
-  flex: 1;
-  flex-direction: column;
-  justify-content: center !important;
-  align-items: center;
-} 
-.game_main .game_body .game_play .game_pitch {
-  height: 70vh;
-  width: 50vh;
-  border: 1px solid #fff;
   overflow: hidden;
-  background-image: url(../images/bgone.PNG);
+  border: 2px solid green;
+  display: flex;
+}
+.game-main .game-track{
+  height: 100%;
+  flex: 1;
+  background-image: url(../images/bg3.jpg);
   background-size: cover;
   position: relative;
 }
-@keyframes move {
+.game-main .game-track .level-indicator{
+  display: block;
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  background: black;
+  padding: 10px 30px;
+  border: 1px solid white;
+  border-radius: 30px;
+  animation: pulse 1.5s infinite;
+  text-transform: uppercase;
+}
+@keyframes pulse {
   0% {
-    top:-100px;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
   100% {
-    top:600px;
+    transform: scale(1);
   }
 }
-.game_main .game_body .game_score{
-  flex: 2;
-  
+.game-main .game-track .barrier-img{
+  position: absolute;
+  top: -17%;
 }
-
-
-
-
+@keyframes move {
+  0%{
+    top: -17%;
+  }
+  100%{
+    top: 100%;
+  }
+}
+.game-main .game-track .race-img{
+  position: absolute;
+  bottom: 5%;
+}
+.game-main .game-stats{
+  flex: 2;
+  background-image: url(../images/statsbg.jpg);
+  background-size: cover;
+  backdrop-filter: brightness(10%);
+  animation: fadeIn 3s ease-in-out;
+}
+.game-main .game-stats .animated-text{
+  color: white;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.game-main .game-stats .curlevCards{
+  background-color:transparent;
+  backdrop-filter: blur(30px);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 170px;
+  border: 1px solid #fff;
+}
+.game-main .game-stats .curlevCards h5{
+  font-size: 16px !important;
+}
+.game-main .game-stats .curlevCards p{
+  margin: 0 !important;
+  color: red;
+  font-size: 32px;
+}
+.game-main .game-stats .curlevCards .spinner{
+  border: 8px solid rgba(159, 5, 5, 0.1);
+  border-left: 8px solid #db3434; /* Blue color for the spinner */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  animation-play-state: paused;
+  margin: auto;
+  display: block;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.game-over-screen {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.game-over-content {
+  text-align: center;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  animation: slideIn 0.5s ease-out;
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.mobile-message{
+  display: none;
+  background-color: #00171f;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .game-main .game-track .level-indicator{
+    top: 45%;
+    left: 25%;
+    font-size: 12px;
+  }
+  .game-main .game-track .race-img{
+    height: 60px;
+    width: 60px;
+  }
+  .game-main .game-track .barrier-img{
+    height: 60px;
+    width: 60px;
+  }
+  .game-main .game-stats .animated-text{
+    font-size: 22px;
+  }
+  .game-main .game-stats .curlevCards{
+    width: 100px;
+  }
+  .game-main .game-stats .curlevCards img{
+    height:50px;
+    width:50px;
+  }
+  .game-main .game-stats .curlevCards .spinner{
+    height:20px;
+    width:20px;
+  }
+  .game-main .game-stats .curlevCards h5{
+    font-size: 12px !important;
+  }
+  .game-main .game-stats .curlevCards p{
+    font-size: 16px;
+  }
+  .game-main .game-stats .next-level-info h4{
+    font-size: 14px;
+  }
+  .game-main .game-stats .next-level-rating h4{
+    font-size:14px
+  }
+  .game-main .game-stats .next-level-rating img{
+    height:50px;
+    width:50px;
+  }
+  .game-main .game-stats .garage{
+    height: fit-content !important;
+    padding: 5px;
+  }
+  .game-main .game-stats .garage-img{
+    height: 50px !important;
+    width: 50px;
+  }
+  .game-main .game-stats .play-btns h3{
+    font-size: 14px;
+  }
+  .game-main .game-stats .start-btn button{
+    font-size: 10px !important;
+    padding: 5px !important;
+    width: 50px !important;
+  }
+}
+@media (max-width: 425px) {
+  .game-main{
+    display:none !important;
+  }
+  .mobile-message{
+    display: flex ;
+    /* background-color: #fe0016; */
+  }
+}

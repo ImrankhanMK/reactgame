@@ -1,0 +1,72 @@
+.scorecard-main {
+    background-color: #000;
+    height: 100vh;
+    text-align: center;
+    color: #333;
+}
+.scorecard-main h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    border-bottom: 1px solid #007bff;
+}
+.scorecard-main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+.scorecard-main h2 .score-dis{
+    color: green;
+}
+.scorecard-main h2 .base-dis{
+    color: #007bff;
+}
+.scorecard-win {
+    justify-content: center;
+}
+.scorecard-win .item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.scorecard-win .item:hover {
+    transform: translateY(-5px);
+}
+.scorecard-win img {
+    display: block;
+    margin: 0 auto 0.5rem;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+}
+.scorecard-win p {
+    margin: 0;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+}
+@media (min-width: 426px) and (max-width: 768px) {
+    .scorecard-win .item {
+        padding: 0.5rem;
+    }
+    .scorecard-win .item img{
+        height: 50px;
+        width: 50px;
+    }
+    .scorecard-win .item p{
+        font-size: 8px;
+    }
+}
+@media (max-width: 425px) {
+    .scorecard-main{
+      display:none !important;
+    }
+    .mobile-message{
+      display: flex ;
+    }
+  }
