@@ -123,13 +123,13 @@ const Game = () => {
     }
 
     return () => clearInterval(intervalRef.current);
-  },[isStarted, isGameCompleted]);
+  },[isStarted, isGameCompleted,positions.length, time]);
 
   useEffect(() => {
     if (barrierRef.current) {
       barrierRef.current.style.left = `${positions[barrier]}%`;
     }
-  },[barrier]);
+  },[barrier, positions]);
 
   useEffect(() => {
     const checkCollision = () => {
@@ -176,8 +176,12 @@ const Game = () => {
           setSpeed(speed - 0.2);
           setTime(time - 200);
           if (level <= 9) {
+            setStaus(!status);
             setLevel(level + 1);
             indicatorRef.current.style.display = "block";
+            spinnerRef.current.style.animationPlayState = !isStarted
+      ? "running"
+      : "paused";
           } else if (level >= 10) {
             setIsGameCompleted(!isGameCompleted);
           }
@@ -204,7 +208,7 @@ const Game = () => {
         );
       }
     };
-  },[score]);
+  },[score, level, isGameCompleted, barrierRef, levelConfigurations]);
 
   // Start or pause the game
   const playPause = () => {
