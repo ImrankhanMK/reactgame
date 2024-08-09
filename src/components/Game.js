@@ -34,7 +34,7 @@ const Game = () => {
     { user: "last level", name: "Truck" },
   ];
 
-  const positions = [10, 39, 67];
+  const positions=[10,39,67];
 
   const barrierRef = useRef(null);
   const racerRef = useRef(null);
@@ -109,8 +109,8 @@ const Game = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  },[isStarted]);
-
+  // },[isStarted]);
+},[isStarted, gameOver, isGameCompleted, positions]);
   // Handle barrier movement
   useEffect(() => {
     if (isStarted) {
@@ -208,7 +208,8 @@ const Game = () => {
         );
       }
     };
-  },[score, level, isGameCompleted, barrierRef, levelConfigurations]);
+  // },[score, level, isGameCompleted, barrierRef, levelConfigurations]);
+},[score, level, isGameCompleted, isStarted, rating, reqScore, speed, status, barrierRef]);
 
   // Start or pause the game
   const playPause = () => {
