@@ -267,7 +267,7 @@ const Game = () => {
             <img
               className="barrier-img"
               src={barrierImg}
-              alt=""
+              alt="image"
               height="80"
               width="70"
               style={{
@@ -376,7 +376,7 @@ const Game = () => {
               <div className="d-flex bg-black garage" style={{ height: "80px" }}>
                 {garage.map((item, key) => (
                   <div>
-                    <img src={garage[key]} alt="" height="80" width="80" className="garage-img" />
+                    <img src={garage[key]} alt="image" height="80" width="80" className="garage-img" />
                   </div>
                 ))}
               </div>
